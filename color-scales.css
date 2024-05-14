@@ -8,10 +8,15 @@ body {
   table {
     border: 1px solid;
     border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
   }
 
 .row-label {
     padding: 12px;
+    font-weight: 600;
+    width: 60px;
+    text-align: right;
 }
 tr{
     height:48px;
@@ -22,8 +27,14 @@ thead{
   }
 
 
-  td.color-cell {
+td.color-cell {
     border: none;
-    width: 120px;
+    width: calc((100% - 60px) / 6);
     text-align:right;
   }
+
+#controls{
+    display:flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}

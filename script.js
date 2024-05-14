@@ -142,15 +142,35 @@ handleColorChange(colorPicker2, 'lum-scl-2-col-', 'rgb-scl-2-col-');
 handleColorChange(colorPicker3, 'lum-scl-3-col-', 'rgb-scl-3-col-');
 
 
-const rgbButton = document.getElementById('rgbButton');
-// Get all elements with the specified class name using querySelectorAll
-const rgbElements = document.querySelectorAll('.rgb');
-
-// Add click event listener to the trigger element
-rgbButton.addEventListener('click', function() {
-    //Loop through the NodeList of elements (can use forEach since NodeList is iterable)
-    rgbElements.forEach(function(element) {
-        // Hide the element by setting its display property to 'none'
-        element.style.display = 'none';
-    });
-});
+function toggleElements(selectedValue) {
+    const lumElements = document.getElementsByClassName('lum');
+    const rgbElements = document.getElementsByClassName('rgb');
+  
+    if (selectedValue === 'rgb') {
+      // Show RGB elements and hide Luminance elements
+      Array.from(lumElements).forEach(element => element.style.display = 'none');
+      Array.from(rgbElements).forEach(element => element.style.display = 'table-cell');
+    } else if (selectedValue === 'lum') {
+      // Show Luminance elements and hide RGB elements
+      Array.from(rgbElements).forEach(element => element.style.display = 'none');
+      Array.from(lumElements).forEach(element => element.style.display = 'table-cell');
+    } else if (selectedValue === 'both') {
+        // Show Luminance elements and hide RGB elements
+        Array.from(rgbElements).forEach(element => element.style.display = 'table-cell');
+        Array.from(lumElements).forEach(element => element.style.display = 'table-cell');
+      }
+  }
+  
+  // Get the dropdown element
+  const dropdown = document.getElementById('dropDown');
+  
+  // Add event listener to handle changes
+  dropdown.addEventListener('change', function(event) {
+    // Get the selected value
+    const selectedValue = event.target.value;
+    // Toggle elements based on the selected value
+    toggleElements(selectedValue);
+  });
+  
+  // Initially hide RGB elements and show Luminance elements
+  toggleElements(dropdown.value);

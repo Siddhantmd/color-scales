@@ -9,27 +9,28 @@
 <body">
     <p>
         Note: Open Console for more details of the generated color scale. </p>
-        <input type="button" value="Hide RGB Scales" id="rgbButton">
-        <input type="button" value="Hide Luminance Scales" id="lumButton">
+        <div id="controls">
+            <div id="colorPickers">
+                Color 1: <input type="color" class="colorPicker" id="colorPicker1" value="#ff0066">
+                Color 1: <input type="color" class="colorPicker" id="colorPicker2" value="#ffd93a">
+                Color 1: <input type="color" class="colorPicker" id="colorPicker3" value="#4800ba">
+            </div>
+            <select id="dropDown">
+                <option value="both">Show both scales</option>
+                <option value="rgb">Show RGB scales only</option>
+                <option value="lum">Show Luminance scales only</option>
+            </select>
+        </div>
     <table>
         <thead>
             <tr>
-                <th></th>
-                <th><input type="color" class="colorPicker" id="colorPicker1" value="#ff0066"></th>
-                <th class="rgb"></th>
-                <th><input type="color" class="colorPicker" id="colorPicker2" value="#ffd93a"></th>
-                <th class="rgb"></th>
-                <th><input type="color" class="colorPicker" id="colorPicker3" value="#4800ba"></th>
-                <th class="rgb"></th>
-            </tr>
-            <tr>
-                <th></th>
-                <th class="lum">Luminance Scale</th>
-                <th class="rgb">RGB Scale</th>
-                <th class="lum">Luminance Scale</th>
-                <th class="rgb">RGB Scale</th>
-                <th class="lum">Luminance Scale</th>
-                <th class="rgb">RGB Scale</th>
+                <td></td>
+                <td class="lum"><b>Color 1</b><br>Luminance Scale</td>
+                <td class="rgb"><b>Color 1</b><br>RGB Scale</td>
+                <td class="lum"><b>Color 2</b><br>Luminance Scale</td>
+                <td class="rgb"><b>Color 2</b><br>RGB Scale</td>
+                <td class="lum"><b>Color 3</b><br>Luminance Scale</td>
+                <td class="rgb"><b>Color 3</b><br>RGB Scale</td>
 
             </tr>
         </thead>
