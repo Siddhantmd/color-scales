@@ -140,3 +140,17 @@ handleColorChange(colorPicker2, 'lum-scl-2-col-', 'rgb-scl-2-col-');
 
 // Call handleColorChange function for colorPicker3 on page load
 handleColorChange(colorPicker3, 'lum-scl-3-col-', 'rgb-scl-3-col-');
+
+
+const rgbButton = document.getElementById('rgbButton');
+// Get all elements with the specified class name using querySelectorAll
+const rgbElements = document.querySelectorAll('.rgb');
+
+// Add click event listener to the trigger element
+rgbButton.addEventListener('click', function() {
+    //Loop through the NodeList of elements (can use forEach since NodeList is iterable)
+    rgbElements.forEach(function(element) {
+        // Hide the element by setting its display property to 'none'
+        element.style.display = 'none';
+    });
+});

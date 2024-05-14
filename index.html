@@ -9,118 +9,125 @@
 <body">
     <p>
         Note: Open Console for more details of the generated color scale. </p>
+        <input type="button" value="Hide RGB Scales" id="rgbButton">
+        <input type="button" value="Hide Luminance Scales" id="lumButton">
     <table>
         <thead>
             <tr>
                 <th></th>
-                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker1" value="#ff0066"></th>
-                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker2" value="#ffd93a"></th>
-                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker3" value="#4800ba"></th>
+                <th><input type="color" class="colorPicker" id="colorPicker1" value="#ff0066"></th>
+                <th class="rgb"></th>
+                <th><input type="color" class="colorPicker" id="colorPicker2" value="#ffd93a"></th>
+                <th class="rgb"></th>
+                <th><input type="color" class="colorPicker" id="colorPicker3" value="#4800ba"></th>
+                <th class="rgb"></th>
             </tr>
             <tr>
                 <th></th>
-                <th>Luminance Scale</th>
-                <th>RGB Scale</th>
-                <th>Luminance Scale</th>
-                <th>RGB Scale</th>
-                <th>Luminance Scale</th>
-                <th>RGB Scale</th>
+                <th class="lum">Luminance Scale</th>
+                <th class="rgb">RGB Scale</th>
+                <th class="lum">Luminance Scale</th>
+                <th class="rgb">RGB Scale</th>
+                <th class="lum">Luminance Scale</th>
+                <th class="rgb">RGB Scale</th>
 
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td class="row-label">Color 01</td>
-                <td class="color-cell" id="lum-scl-1-col-1"></td>
-                <td class="color-cell" id="rgb-scl-1-col-1"></td>
-                <td class="color-cell" id="lum-scl-2-col-1"></td>
-                <td class="color-cell" id="rgb-scl-2-col-1"></td>
-                <td class="color-cell" id="lum-scl-3-col-1"></td>
-                <td class="color-cell" id="rgb-scl-3-col-1"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-1"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-1"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-1"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-1"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-1"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-1"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 02</td>
-                <td class="color-cell" id="lum-scl-1-col-2"></td>
-                <td class="color-cell" id="rgb-scl-1-col-2"></td>
-                <td class="color-cell" id="lum-scl-2-col-2"></td>
-                <td class="color-cell" id="rgb-scl-2-col-2"></td>
-                <td class="color-cell" id="lum-scl-3-col-2"></td>
-                <td class="color-cell" id="rgb-scl-3-col-2"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-2"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-2"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-2"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-2"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-2"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-2"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 03</td>
-                <td class="color-cell" id="lum-scl-1-col-3"></td>
-                <td class="color-cell" id="rgb-scl-1-col-3"></td>
-                <td class="color-cell" id="lum-scl-2-col-3"></td>
-                <td class="color-cell" id="rgb-scl-2-col-3"></td>
-                <td class="color-cell" id="lum-scl-3-col-3"></td>
-                <td class="color-cell" id="rgb-scl-3-col-3"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-3"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-3"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-3"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-3"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-3"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-3"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 04</td>
-                <td class="color-cell" id="lum-scl-1-col-4"></td>
-                <td class="color-cell" id="rgb-scl-1-col-4"></td>
-                <td class="color-cell" id="lum-scl-2-col-4"></td>
-                <td class="color-cell" id="rgb-scl-2-col-4"></td>
-                <td class="color-cell" id="lum-scl-3-col-4"></td>
-                <td class="color-cell" id="rgb-scl-3-col-4"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-4"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-4"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-4"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-4"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-4"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-4"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 05</td>
-                <td class="color-cell" id="lum-scl-1-col-5"></td>
-                <td class="color-cell" id="rgb-scl-1-col-5"></td>
-                <td class="color-cell" id="lum-scl-2-col-5"></td>
-                <td class="color-cell" id="rgb-scl-2-col-5"></td>
-                <td class="color-cell" id="lum-scl-3-col-5"></td>
-                <td class="color-cell" id="rgb-scl-3-col-5"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-5"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-5"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-5"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-5"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-5"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-5"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 06</td>
-                <td class="color-cell" id="lum-scl-1-col-6"></td>
-                <td class="color-cell" id="rgb-scl-1-col-6"></td>
-                <td class="color-cell" id="lum-scl-2-col-6"></td>
-                <td class="color-cell" id="rgb-scl-2-col-6"></td>
-                <td class="color-cell" id="lum-scl-3-col-6"></td>
-                <td class="color-cell" id="rgb-scl-3-col-6"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-6"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-6"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-6"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-6"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-6"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-6"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 07</td>
-                <td class="color-cell" id="lum-scl-1-col-7"></td>
-                <td class="color-cell" id="rgb-scl-1-col-7"></td>
-                <td class="color-cell" id="lum-scl-2-col-7"></td>
-                <td class="color-cell" id="rgb-scl-2-col-7"></td>
-                <td class="color-cell" id="lum-scl-3-col-7"></td>
-                <td class="color-cell" id="rgb-scl-3-col-7"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-7"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-7"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-7"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-7"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-7"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-7"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 08</td>
-                <td class="color-cell" id="lum-scl-1-col-8"></td>
-                <td class="color-cell" id="rgb-scl-1-col-8"></td>
-                <td class="color-cell" id="lum-scl-2-col-8"></td>
-                <td class="color-cell" id="rgb-scl-2-col-8"></td>
-                <td class="color-cell" id="lum-scl-3-col-8"></td>
-                <td class="color-cell" id="rgb-scl-3-col-8"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-8"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-8"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-8"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-8"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-8"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-8"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 09</td>
-                <td class="color-cell" id="lum-scl-1-col-9"></td>
-                <td class="color-cell" id="rgb-scl-1-col-9"></td>
-                <td class="color-cell" id="lum-scl-2-col-9"></td>
-                <td class="color-cell" id="rgb-scl-2-col-9"></td>
-                <td class="color-cell" id="lum-scl-3-col-9"></td>
-                <td class="color-cell" id="rgb-scl-3-col-9"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-9"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-9"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-9"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-9"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-9"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-9"></td>
             </tr>
             <tr>
                 <td class="row-label">Color 10</td>
-                <td class="color-cell" id="lum-scl-1-col-10"></td>
-                <td class="color-cell" id="rgb-scl-1-col-10"></td>
-                <td class="color-cell" id="lum-scl-2-col-10"></td>
-                <td class="color-cell" id="rgb-scl-2-col-10"></td>
-                <td class="color-cell" id="lum-scl-3-col-10"></td>
-                <td class="color-cell" id="rgb-scl-3-col-10"></td>
+                <td class="color-cell lum" id="lum-scl-1-col-10"></td>
+                <td class="color-cell rgb" id="rgb-scl-1-col-10"></td>
+                <td class="color-cell lum" id="lum-scl-2-col-10"></td>
+                <td class="color-cell rgb" id="rgb-scl-2-col-10"></td>
+                <td class="color-cell lum" id="lum-scl-3-col-10"></td>
+                <td class="color-cell rgb" id="rgb-scl-3-col-10"></td>
             </tr>
         </tbody>
     </table>
+ 
+
 </body>
 
 <script type="module" src="script.js" defer></script>
