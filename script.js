@@ -85,22 +85,23 @@ function handleColorChange(colorPicker, elementPrefix1, elementPrefix2) {
 
     // Logging results
     let str = colorPicker.id;
-    console.log("####----COLOR PICKER: " + (str.toUpperCase()) + "----####");
-    console.table('\n');
-    console.log("selected color in HSL:" + (hslColor));
+    console.log("----COLOR PICKER: " + (str.toUpperCase()) + "----");
+    // console.log("selected color in HSL:" + (hslColor));
     console.log("Selected color in Hexcode: " + selectedColor);
     console.log("Luminance of selected color: " + luminance);
-    console.log("Position of selected color from 0 to 9: " + (origColPos));
+    console.log("Position of selected color (from 1 to 10) : " + (origColPos + 1));
     console.log("Classification/Darkness of the selected color: " + classify(origColPos));//classification of color
-    console.table("Final color scale with Hexcode, Luminance and HSL values: ");
+    console.log("Final color scale with Hexcode, Luminance and HSL values: ");
 
-    console.log(colorScaleComplete);
-    console.log("Expanded table in HSL: ");
+    console.table(colorScaleComplete);
+/*     console.log("Expanded table in HSL: ");
     console.table(allHslValues);
     console.log("Expanded table in Hexcode with Luminance: ");
-    console.table(expandedScale);
+    console.table(expandedScale); */
     console.log("RGB Color Scale: ");
     console.table (rgbColorScale);
+    console.log('\n');
+    console.log('\n');
     console.log('\n');
 
 
@@ -174,3 +175,42 @@ function toggleElements(selectedValue) {
   
   // Initially hide RGB elements and show Luminance elements
   toggleElements(dropdown.value);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get all elements with the class 'color-cell'
+    var colorCells = document.querySelectorAll('.color-cell');
+  
+    // Add click event listener to each color cell
+    colorCells.forEach(function(cell) {
+      cell.addEventListener('click', function() {
+        // Get the background color of the clicked element
+        var bgColor = this.style.backgroundColor;
+  
+        // Convert the RGB color to HEX format
+        var hexColor = rgbStrToHexCode(bgColor);
+  
+        // Copy the HEX color to the clipboard
+        navigator.clipboard.writeText(hexColor).then(function() {
+          // Alert that the color has been copied to clipboard
+          alert('Color copied to clipboard: ' + hexColor);
+        }).catch(function() {
+          // If clipboard write fails
+          alert('Failed to copy color to clipboard');
+        });
+      });
+    });
+  
+    // Function to convert RGB color to HEX format
+    function rgbStrToHexCode(rgb) {
+      // Convert rgb color to an array of integers
+      var parts = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+      delete(parts[0]);
+      for (var i = 1; i <= 3; ++i) {
+        parts[i] = parseInt(parts[i]).toString(16);
+        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+      }
+      // Construct the HEX color
+      var hexColor = '#' + parts.join('');
+      return hexColor;
+    }
+  });

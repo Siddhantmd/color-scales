@@ -16,7 +16,7 @@ var numColBelow = origColPos;
 export function generateColorScaleRgb(selectedColor, origColPos){
     var selectedColRgbUnmapped = hexToRgb(selectedColor);
     var selectedColRgb = [selectedColRgbUnmapped[0] * 255, selectedColRgbUnmapped[1] * 255, selectedColRgbUnmapped[2] * 255 ]
-    console.log("Selected color in RGB: " + selectedColRgb)
+    // console.log("Selected color in RGB: " + selectedColRgb)
     var rgbColorScale = [];
     for (var i = 0; i <= 9; i++) {
         rgbColorScale.push([0, 0, 0]);
