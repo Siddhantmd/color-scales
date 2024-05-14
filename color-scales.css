@@ -1,0 +1,29 @@
+body {
+    background-color:#808080;
+    color:white;
+    font-family: sans-serif;
+    font-size: 12px;
+  }
+  
+  table {
+    border: 1px solid;
+    border-collapse: collapse;
+  }
+
+.row-label {
+    padding: 12px;
+}
+tr{
+    height:48px;
+}
+
+thead{
+    border-bottom: 1px solid;
+  }
+
+
+  td.color-cell {
+    border: none;
+    width: 120px;
+    text-align:right;
+  }
