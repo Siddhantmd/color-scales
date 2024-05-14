@@ -13,9 +13,9 @@
         <thead>
             <tr>
                 <th></th>
-                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker1"></th>
-                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker2"></th>
-                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker3"></th>
+                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker1" value="#ff0066"></th>
+                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker2" value="#ffd93a"></th>
+                <th colspan="2"><input type="color" class="colorPicker" id="colorPicker3" value="#4800ba"></th>
             </tr>
             <tr>
                 <th></th>
@@ -128,5 +128,38 @@
 <script type="module" src="color-conversions-1.js" defer></script>
 <script type="module" src="color-conversions-2.js" defer></script>
 <script type="module" src="rgb-color-scale.js" defer></script>
+
+<script>
+    // Function to copy background color of clicked element
+    function copyBackgroundColor(event) {
+        // Get the background color of the clicked element
+        var bgColor = event.target.style.backgroundColor;
+
+        // Create a temporary textarea element
+        var textarea = document.createElement('textarea');
+        textarea.value = bgColor;
+
+        // Append the textarea to the document body
+        document.body.appendChild(textarea);
+
+        // Select the text inside the textarea
+        textarea.select();
+
+        // Copy the text to the clipboard
+        document.execCommand('copy');
+
+        // Remove the textarea from the document body
+        document.body.removeChild(textarea);
+
+        // Alert the user that the color has been copied
+        alert('Background color copied: ' + bgColor);
+    }
+
+    // Add click event listener to elements with a particular class
+    document.querySelectorAll('.color-cell').forEach(function(element) {
+        element.addEventListener('click', copyBackgroundColor);
+    });
+</script>
+
 
 </html>

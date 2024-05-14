@@ -124,7 +124,6 @@ function handleColorChange(colorPicker, elementPrefix1, elementPrefix2) {
 document.addEventListener('DOMContentLoaded', function () {
     colorPicker1.addEventListener("change", function () {
         handleColorChange(colorPicker1, 'lum-scl-1-col-','rgb-scl-1-col-');
-        // handleColorChange(colorPicker1, 'rgb-scl-1-col-');
     });
     colorPicker2.addEventListener("change", function () {
         handleColorChange(colorPicker2, 'lum-scl-2-col-', 'rgb-scl-2-col-');
@@ -133,3 +132,11 @@ document.addEventListener('DOMContentLoaded', function () {
         handleColorChange(colorPicker3, 'lum-scl-3-col-','rgb-scl-3-col-');
     });
 });
+// Call handleColorChange function for colorPicker1 on page load
+handleColorChange(colorPicker1, 'lum-scl-1-col-', 'rgb-scl-1-col-');
+
+// Call handleColorChange function for colorPicker2 on page load
+handleColorChange(colorPicker2, 'lum-scl-2-col-', 'rgb-scl-2-col-');
+
+// Call handleColorChange function for colorPicker3 on page load
+handleColorChange(colorPicker3, 'lum-scl-3-col-', 'rgb-scl-3-col-');
