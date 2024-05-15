@@ -54,10 +54,10 @@ export var allHslValues = [];
 //list of desired colors from the expanded color scale
 export var desColPos;
 
-import {hexToHsl,hslToHex} from './color-conversions-1.js';
-import {hexToLuminance} from './color-conversions-2.js';
-import {compareLuminance, createExpandedScale,closestValuePosition, generateColorScale, addHslToColorScale, classify} from './helper-functions.js';
-import {generateColorScaleRgb} from './rgb-color-scale.js';
+import { hexToHsl, hslToHex } from './color-conversions-1.js';
+import { hexToLuminance } from './color-conversions-2.js';
+import { compareLuminance, createExpandedScale, closestValuePosition, generateColorScale, addHslToColorScale, classify } from './helper-functions.js';
+import { generateColorScaleRgb } from './rgb-color-scale.js';
 
 //----MAIN FUNCTION----//
 // Define a generic event handler function
@@ -94,12 +94,12 @@ function handleColorChange(colorPicker, elementPrefix1, elementPrefix2) {
     console.log("Final color scale with Hexcode, Luminance and HSL values: ");
 
     console.table(colorScaleComplete);
-/*     console.log("Expanded table in HSL: ");
-    console.table(allHslValues);
-    console.log("Expanded table in Hexcode with Luminance: ");
-    console.table(expandedScale); */
+    /*     console.log("Expanded table in HSL: ");
+        console.table(allHslValues);
+        console.log("Expanded table in Hexcode with Luminance: ");
+        console.table(expandedScale); */
     console.log("RGB Color Scale: ");
-    console.table (rgbColorScale);
+    console.table(rgbColorScale);
     console.log('\n');
     console.log('\n');
     console.log('\n');
@@ -112,7 +112,7 @@ function handleColorChange(colorPicker, elementPrefix1, elementPrefix2) {
         const element = document.getElementById(elementId);
         // Assign a different background color to each element
         element.style.backgroundColor = mappedColorScale[i - 1];
-        
+
         //Rendering RGB color scale in HTML
         const elementId2 = elementPrefix2 + i;
         const element2 = document.getElementById(elementId2);
@@ -124,13 +124,13 @@ function handleColorChange(colorPicker, elementPrefix1, elementPrefix2) {
 // Add event listeners after DOM content has loaded
 document.addEventListener('DOMContentLoaded', function () {
     colorPicker1.addEventListener("change", function () {
-        handleColorChange(colorPicker1, 'lum-scl-1-col-','rgb-scl-1-col-');
+        handleColorChange(colorPicker1, 'lum-scl-1-col-', 'rgb-scl-1-col-');
     });
     colorPicker2.addEventListener("change", function () {
         handleColorChange(colorPicker2, 'lum-scl-2-col-', 'rgb-scl-2-col-');
     });
     colorPicker3.addEventListener("change", function () {
-        handleColorChange(colorPicker3, 'lum-scl-3-col-','rgb-scl-3-col-');
+        handleColorChange(colorPicker3, 'lum-scl-3-col-', 'rgb-scl-3-col-');
     });
 });
 // Call handleColorChange function for colorPicker1 on page load
@@ -146,71 +146,101 @@ handleColorChange(colorPicker3, 'lum-scl-3-col-', 'rgb-scl-3-col-');
 function toggleElements(selectedValue) {
     const lumElements = document.getElementsByClassName('lum');
     const rgbElements = document.getElementsByClassName('rgb');
-  
+
     if (selectedValue === 'rgb') {
-      // Show RGB elements and hide Luminance elements
-      Array.from(lumElements).forEach(element => element.style.display = 'none');
-      Array.from(rgbElements).forEach(element => element.style.display = 'table-cell');
+        // Show RGB elements and hide Luminance elements
+        Array.from(lumElements).forEach(element => element.style.display = 'none');
+        Array.from(rgbElements).forEach(element => element.style.display = 'table-cell');
     } else if (selectedValue === 'lum') {
-      // Show Luminance elements and hide RGB elements
-      Array.from(rgbElements).forEach(element => element.style.display = 'none');
-      Array.from(lumElements).forEach(element => element.style.display = 'table-cell');
+        // Show Luminance elements and hide RGB elements
+        Array.from(rgbElements).forEach(element => element.style.display = 'none');
+        Array.from(lumElements).forEach(element => element.style.display = 'table-cell');
     } else if (selectedValue === 'both') {
         // Show Luminance elements and hide RGB elements
         Array.from(rgbElements).forEach(element => element.style.display = 'table-cell');
         Array.from(lumElements).forEach(element => element.style.display = 'table-cell');
-      }
-  }
-  
-  // Get the dropdown element
-  const dropdown = document.getElementById('dropDown');
-  
-  // Add event listener to handle changes
-  dropdown.addEventListener('change', function(event) {
+    }
+}
+
+// Get the dropdown element
+const dropdown = document.getElementById('dropDown');
+
+// Add event listener to handle changes
+dropdown.addEventListener('change', function (event) {
     // Get the selected value
     const selectedValue = event.target.value;
     // Toggle elements based on the selected value
     toggleElements(selectedValue);
-  });
-  
-  // Initially hide RGB elements and show Luminance elements
-  toggleElements(dropdown.value);
+});
 
-  document.addEventListener('DOMContentLoaded', function() {
+// Initially hide RGB elements and show Luminance elements
+toggleElements(dropdown.value);
+
+document.addEventListener('DOMContentLoaded', function () {
     // Get all elements with the class 'color-cell'
     var colorCells = document.querySelectorAll('.color-cell');
-  
+
     // Add click event listener to each color cell
-    colorCells.forEach(function(cell) {
-      cell.addEventListener('click', function() {
-        // Get the background color of the clicked element
-        var bgColor = this.style.backgroundColor;
-  
-        // Convert the RGB color to HEX format
-        var hexColor = rgbStrToHexCode(bgColor);
-  
-        // Copy the HEX color to the clipboard
-        navigator.clipboard.writeText(hexColor).then(function() {
-          // Alert that the color has been copied to clipboard
-          alert('Color copied to clipboard: ' + hexColor);
-        }).catch(function() {
-          // If clipboard write fails
-          alert('Failed to copy color to clipboard');
+    colorCells.forEach(function (cell) {
+        cell.addEventListener('click', function () {
+            // Get the background color of the clicked element
+            var bgColor = this.style.backgroundColor;
+
+            // Convert the RGB color to HEX format
+            var hexColor = rgbStrToHexCode(bgColor);
+
+            // Copy the HEX color to the clipboard
+            navigator.clipboard.writeText(hexColor)
+                .then(function () {
+                    // Alert that the color has been copied to clipboard
+                    var alertMessage = 'Color copied to clipboard: ' + hexColor;
+                    showMessage(alertMessage, 3000); // Display for 3 seconds
+                })
+                .catch(function () {
+                    // If clipboard write fails
+                    var errorMessage = 'Failed to copy color to clipboard';
+                    showMessage(errorMessage, 3000); // Display for 3 seconds
+                });
+
+                var messageTimeout; // Variable to store the timeout reference
+
+                function showMessage(message, duration) {
+                  var messageBox = document.getElementById('messageBox');
+                  // Set the message content
+                  messageBox.textContent = message;
+                  // Show the message box
+                  messageBox.style.display = 'block';
+                  
+                  // Clear the previous timeout, if any
+                  clearTimeout(messageTimeout);
+                  
+                  // Automatically hide the message box after the specified duration
+                  messageTimeout = setTimeout(function() {
+                    // Hide the message box
+                    messageBox.style.display = 'none';
+                  }, duration);
+                }
+                
+                // Example function to simulate triggering a message
+                function triggerMessage() {
+                  var hexColor = "#ff0000"; // Example color, replace with your logic to get the color
+                  var alertMessage = 'Color copied to clipboard: ' + hexColor;
+                  showMessage(alertMessage, 3000); // Display for 3 seconds
+                }
         });
-      });
     });
-  
+
     // Function to convert RGB color to HEX format
     function rgbStrToHexCode(rgb) {
-      // Convert rgb color to an array of integers
-      var parts = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-      delete(parts[0]);
-      for (var i = 1; i <= 3; ++i) {
-        parts[i] = parseInt(parts[i]).toString(16);
-        if (parts[i].length == 1) parts[i] = '0' + parts[i];
-      }
-      // Construct the HEX color
-      var hexColor = '#' + parts.join('');
-      return hexColor;
+        // Convert rgb color to an array of integers
+        var parts = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        delete (parts[0]);
+        for (var i = 1; i <= 3; ++i) {
+            parts[i] = parseInt(parts[i]).toString(16);
+            if (parts[i].length == 1) parts[i] = '0' + parts[i];
+        }
+        // Construct the HEX color
+        var hexColor = '#' + parts.join('');
+        return hexColor;
     }
-  });
+});

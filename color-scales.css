@@ -68,3 +68,23 @@ p{
 li{
     margin-top: 8px;
 }
+
+/* Selects every third element in the parent */
+/* tr:nth-child(3), tr:nth-child(5) {
+    border-right: 1px solid white;
+    margin-right:4px;
+  } */
+
+  .message-box {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    display: none; /* Initially hidden */
+    color: black;
+  }

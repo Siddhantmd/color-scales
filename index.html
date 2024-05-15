@@ -7,6 +7,7 @@
 </head>
 
 <body">
+    <div class="message-box" id="messageBox"></div>
     <h1>
         Comparing Color Scales
     </h1>
@@ -16,6 +17,7 @@
         <li>A color scale that works by matching each color in the color scale to a desired relative luminance value.
         </li>
     </ol>
+    <p>You can show or hide either of the color scales or show both side by side for comparison.</p>
     <p>This project was done to verify that luminance derived color scale is more reliable. Click on any color to copy its hexcode. Additionally, you can open the browser's console to view more details about the selected colors and the generated color scales. </p>
     <hr>
     <div id="controls">
@@ -25,7 +27,7 @@
             Select Color 3: <input type="color" class="colorPicker" id="colorPicker3" value="#4800ba">
         </div>
         <select id="dropDown">
-            <option value="both">Show both color scale types</option>
+            <option value="both">Show both color scales side by side</option>
             <option value="rgb">Show RGB derived scales only</option>
             <option value="lum">Show luminance derived scales only</option>
         </select>
