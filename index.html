@@ -7,20 +7,29 @@
 </head>
 
 <body">
-    <p>
-        Note: Open Console for more details of the generated color scale. </p>
-        <div id="controls">
-            <div id="colorPickers">
-                Color 1: <input type="color" class="colorPicker" id="colorPicker1" value="#ff0066">
-                Color 2: <input type="color" class="colorPicker" id="colorPicker2" value="#ffd93a">
-                Color 3: <input type="color" class="colorPicker" id="colorPicker3" value="#4800ba">
-            </div>
-            <select id="dropDown">
-                <option value="both">Show both scales</option>
-                <option value="rgb">Show RGB scales only</option>
-                <option value="lum">Show Luminance scales only</option>
-            </select>
+    <h1>
+        Comparing Color Scales
+    </h1>
+    <p>When you select a color, two color scales will be generated for it:</p>
+    <ol>
+        <li>A color scale derived from the original color's RGB values by increment and decrement.</li>
+        <li>A color scale that works by matching each color in the color scale to a desired relative luminance value.
+        </li>
+    </ol>
+    <p>This project was done to verify that luminance derived color scale is more reliable. Click on any color to copy its hexcode. Additionally, you can open the browser's console to view more details about the selected colors and the generated color scales. </p>
+    <hr>
+    <div id="controls">
+        <div id="colorPickers">
+            Select Color 1: <input type="color" class="colorPicker" id="colorPicker1" value="#ff0066">
+            Select Color 2: <input type="color" class="colorPicker" id="colorPicker2" value="#ffd93a">
+            Select Color 3: <input type="color" class="colorPicker" id="colorPicker3" value="#4800ba">
         </div>
+        <select id="dropDown">
+            <option value="both">Show both color scale types</option>
+            <option value="rgb">Show RGB derived scales only</option>
+            <option value="lum">Show luminance derived scales only</option>
+        </select>
+    </div>
     <table>
         <thead>
             <tr>
@@ -127,15 +136,15 @@
             </tr>
         </tbody>
     </table>
- 
 
-</body>
 
-<script type="module" src="script.js" defer></script>
-<script type="module" src="helper-functions.js" defer></script>
-<script type="module" src="color-conversions-1.js" defer></script>
-<script type="module" src="color-conversions-2.js" defer></script>
-<script type="module" src="rgb-color-scale.js" defer></script>
+    </body>
+
+    <script type="module" src="script.js" defer></script>
+    <script type="module" src="helper-functions.js" defer></script>
+    <script type="module" src="color-conversions-1.js" defer></script>
+    <script type="module" src="color-conversions-2.js" defer></script>
+    <script type="module" src="rgb-color-scale.js" defer></script>
 
 
 </html>
