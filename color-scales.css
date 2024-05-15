@@ -51,7 +51,8 @@ td.color-cell {
   }
 
 #controls{
-    gap: 48px;
+    column-gap: 200px;
+    row-gap: 8px;
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -65,7 +66,6 @@ td.color-cell {
     flex-direction:row ;
     align-items:center;
     flex-wrap: wrap;
-    flex-grow: 1;
     justify-content: space-between;
 
 }
