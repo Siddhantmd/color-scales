@@ -13,6 +13,7 @@ h1{
     top:0px;
     padding: 12px 0;
     background-color:#808080;
+    line-height: 1.5em;
 }
 
   table {
@@ -27,6 +28,9 @@ h1{
     font-weight: 600;
     width: 60px;
     text-align: right;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    overflow: hidden;
 }
 tr{
     height:48px;
@@ -47,6 +51,7 @@ td.color-cell {
   }
 
 #controls{
+    gap: 48px;
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -55,11 +60,13 @@ td.color-cell {
 }
 
 #colorPickers{
-    gap: 20px;
+    gap:8px;
     display:flex;
     flex-direction:row ;
     align-items:center;
     flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
 
 }
 
@@ -90,3 +97,25 @@ li{
     display: none; /* Initially hidden */
     color: black;
   }
+
+  #dropDown{
+    padding: 6px 8px;
+    margin: 12px 0;
+    font-size:16px;
+    flex-grow: 1;
+  }
+
+  .head {
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    overflow: hidden;
+  }
+
+.colorPickerwithText{
+    display: flex;
+    justify-content: space-evenly;
+}
+.colorPickerLabel{
+    margin-right: 4px;
+
+}
