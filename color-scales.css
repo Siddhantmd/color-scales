@@ -51,7 +51,7 @@ td.color-cell {
   }
 
 #controls{
-    column-gap: 200px;
+    column-gap: 100px;
     row-gap: 8px;
     display:flex;
     justify-content: space-between;
@@ -61,12 +61,14 @@ td.color-cell {
 }
 
 #colorPickers{
-    gap:8px;
+    row-gap:24px;
+    column-gap: 20px;
     display:flex;
     flex-direction:row ;
     align-items:center;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-grow: 1;
 
 }
 
