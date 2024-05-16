@@ -28,7 +28,7 @@ export var colScaleLumRef = [
 //update the values of colScaleLumRef array to include difference and desired luminances
 for (var i = 0; i < 10; i++) {
     colScaleLumRef[i].diff = colScaleLumRef[i].upperLumLimit - colScaleLumRef[i].lowerLumLimit;
-    colScaleLumRef[i].desLum = colScaleLumRef[i].lowerLumLimit + (colScaleLumRef[i].diff * 0.25);
+    colScaleLumRef[i].desLum = colScaleLumRef[i].lowerLumLimit + (colScaleLumRef[i].diff * 0.33);
 };
 console.log(colScaleLumRef);
 
