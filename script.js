@@ -24,7 +24,7 @@ export var colScaleLumRef = [
     { lowerLumLimit: 0.532, upperLumLimit: 0.673, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.674, upperLumLimit: 0.831, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.832, upperLumLimit: 1.000, diff: 0, desLum: 0 },
-
+]
 
 /*export var colScaleLumRef = [
     { lowerLumLimit: 0.000, upperLumLimit: 0.1, diff: 0, desLum: 0 },
