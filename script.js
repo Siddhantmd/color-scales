@@ -13,7 +13,7 @@ export var hslColor;
 export var origColPos;
 
 //array with reference upper and lower luminance limits
-/*export var colScaleLumRef = [
+export var colScaleLumRef = [
     { lowerLumLimit: 0.000, upperLumLimit: 0.032, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.033, upperLumLimit: 0.073, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.074, upperLumLimit: 0.131, diff: 0, desLum: 0 },
@@ -24,9 +24,9 @@ export var origColPos;
     { lowerLumLimit: 0.532, upperLumLimit: 0.673, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.674, upperLumLimit: 0.831, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.832, upperLumLimit: 1.000, diff: 0, desLum: 0 },
-]*/
 
-export var colScaleLumRef = [
+
+/*export var colScaleLumRef = [
     { lowerLumLimit: 0.000, upperLumLimit: 0.1, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.1, upperLumLimit: 0.2, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.2, upperLumLimit: 0.3, diff: 0, desLum: 0 },
@@ -37,7 +37,7 @@ export var colScaleLumRef = [
     { lowerLumLimit: 0.7, upperLumLimit: 0.8, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.8, upperLumLimit: 0.9, diff: 0, desLum: 0 },
     { lowerLumLimit: 0.9, upperLumLimit: 1.000, diff: 0, desLum: 0 },
-]
+]*/
 //update the values of colScaleLumRef array to include difference and desired luminances
 for (var i = 0; i < 10; i++) {
     colScaleLumRef[i].diff = colScaleLumRef[i].upperLumLimit - colScaleLumRef[i].lowerLumLimit;
